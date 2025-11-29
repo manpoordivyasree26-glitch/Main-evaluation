@@ -6,6 +6,44 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
+    <h1>Fleet Management</h1>
     <button onclick="window.location.href='index.html'">login</button>
+    <h3>Add fleet form</h3>
+    <label>Reg.No of vehicle</label><br>
+    <input id="reg" type="text"><br><br>
+    <label>caterogry</label><br>
+    <select id="caterogry">
+        <option value="Atuo">Auto</option>
+        <option value="Car">car</option>
+        <option value="Truck">Truck</option>
+        <option value="Bus">Bus</option>
+   </select><br><br>
+   <label>Driver Name:</label><br>
+   <input id="driver" type="text"><br><br>
+   <label>Is Avaliable:</label><br>
+   <select id="Avaliable">
+    <option value="Avaliable">Avaliable</option>
+    <option value="Unavaliable">Unavaliable</option>
+   </select>
+   <br><br>
+   <button onclick="addfleet()">Add fleet</button>
+   <div>
+    <h3>fleet List(cards)</h3>
+    <span style="color:red">
+        <div id="cardsConatiner"></div>
+    </span>
+    <br><br>
+    <h3>Fleet Table</h3>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>reg.no</th>
+                <th>caterogry</th>
+                <th>Driver</th>
+                <th>Avaliability</th>
+            </tr>
+        </thead>
+      </table>
+   </div>
 </body>
 </html>
