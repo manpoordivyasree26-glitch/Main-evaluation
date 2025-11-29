@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Management App</title>
+</head>
+<body>
+    <h2>login</h2>
+    <input id="email" type="text" placeholder="Enter Email"><br><br>
+    <input id="passward" type="passward" placeholder="Enter Passward"><br><br>
+     <button onclick="window.location.href='admin.html'">Admin Dashboard page</button>
+<script>
+    function login(){
+ let email=document.getElementById("email").value;
+ let passward=document.getElementById("passward").value;
+  
+ let vaildEmail="admin@email.com";
+ let vaildPassward="admin1234";
+  
+ if(email== validEmail&&passward === validPassward){
+    alert("login sucess");
+    window.loctaion.href="admin.html";
+ }
+ else{
+    alert("wrong email or passward");
+ }
+ }
+    
+</script>
+</body>
+
+</html>
