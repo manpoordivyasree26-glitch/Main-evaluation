@@ -26,6 +26,8 @@
     <option value="Unavaliable">Unavaliable</option>
    </select>
    <br><br>
+   <label>Image Url:</label><br>
+   <input id="image" type="text"><br><br>
    <button onclick="addfleet()">Add fleet</button>
    <div>
     <h3>fleet List(cards)</h3>
@@ -33,17 +35,55 @@
         <div id="cardsConatiner"></div>
     </span>
     <br><br>
-    <h3>Fleet Table</h3>
-    <table border="1" cellpadding="8">
-        <thead>
-            <tr>
-                <th>reg.no</th>
-                <th>caterogry</th>
-                <th>Driver</th>
-                <th>Avaliability</th>
-            </tr>
-        </thead>
-      </table>
-   </div>
+    <h3>Cards</h3>
+    <div id="cards"></div>
 </body>
+<script>
+    function addFleet(){
+        let reg=document.getElementById("reg").value;
+        let caterogry=document.getElementById("category").value;
+        let driver=document.getElementsById("driver").value;
+        let avaliable=document.getElementBYId("avaliable").value;
+        let Unavaliable=document.getElementById("unvaliable").value;
+        let image=document.getElementById("image").value;
+         if(reg===""&& driver===""){
+            alert("please fill the requried fields");
+            return;
+
+         }
+         let card=document.createElement("div");
+         card.style.border="1px solid balck";
+         card.style.padding="10px";
+         card.style.margin="10px";
+         card.style.width="250px";
+
+         let img=document.createElement("img");
+         if(img ==="")
+         {
+            img src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png";
+
+         }else{
+            img.src=image;
+         }
+         img.style.width="100%"
+         card.appendchild(img);
+         let p1=document.createElement("p");
+         p1.innerText="Reg.no:" +reg;
+         let p2=document.createElement("p");
+         p2.innerText="category" +caterogry;
+         let p3=document.createElement("p")
+         p3.innerText="Driver" +Driver;
+         let P4=document.createElement("p")
+         p4.innerText="Avaliability" +avaliable;
+         card.appendChild(p1);
+         card.appendChild(p2);
+         card.appendChild(p3);
+         card.appendChild(p4);
+         document.getElementId("cards").appendChild(card);
+         document.getElementId("reg").value="";
+         document.getElementId("Driver").value="";
+         
+
+    }
+</script>
 </html>
