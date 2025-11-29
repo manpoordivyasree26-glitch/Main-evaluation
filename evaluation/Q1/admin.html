@@ -27,7 +27,7 @@
    </select>
    <br><br>
    <label>Image Url:</label><br>
-   <input id="image" type="text"><br><br>
+   <img src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png" width="300" height="300">
    <button onclick="addfleet()">Add fleet</button>
    <div>
     <h3>fleet List(cards)</h3>
@@ -46,7 +46,10 @@
         let avaliable=document.getElementBYId("avaliable").value;
         let Unavaliable=document.getElementById("unvaliable").value;
         let image=document.getElementById("image").value;
-         if(reg===""&& driver===""){
+
+        
+        
+        if(reg===""&& driver===""){
             alert("please fill the requried fields");
             return;
 
@@ -58,14 +61,14 @@
          card.style.width="250px";
 
          let img=document.createElement("img");
+         img.style.width="100%";
          if(img ==="")
          {
-            img src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png";
-
-         }else{
+           img.src=imagelink;
+         }
+         else{
             img.src=image;
          }
-         img.style.width="100%"
          card.appendchild(img);
          let p1=document.createElement("p");
          p1.innerText="Reg.no:" +reg;
@@ -79,11 +82,45 @@
          card.appendChild(p2);
          card.appendChild(p3);
          card.appendChild(p4);
+          
+         let updatebtn=document.createElement("button");
+         updatebtn.innerText="Update Driver"
+         updatebtn.onclick=function(){
+            let newname=prompt("Enter new driver name");
+            if(newName!== null&& newName.trim()!=="")
+         {
+            p3.innertext="Driver:"+newName;
+        }
+         };
+         card.appendChild(updatebtn);
+         let availBtn=document.createElement("button")
+         availBtn.innerText="change Avaliability";
+         availBtn.style.marginleft="5px";
+         availBtn.onclick=function(){
+            if(avaliable==="Avaliable")
+         {
+            available="Unavaliable"
+         }else{
+            available="Available"
+         }
+         p4.innerText="Availability:"+Available;
+
+         };
+         card.appendchild(available)
+         let deleteBtn=document.createElement("button")
+         deleteBtn.innertext="Delete vehicle";
+         deleteBtn.style.marginLeft="5px"
+         deleteBtn.onclick=function(){
+            card=remove();
+         };
+         card.appendChild(deleteBtn);
          document.getElementId("cards").appendChild(card);
          document.getElementId("reg").value="";
          document.getElementId("Driver").value="";
+         document.getElementId("image").value="";
          
 
     }
 </script>
 </html>
+https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png
