@@ -3,7 +3,7 @@
  import AdminDashboard from "./pages/admin/AdminDashboard";
  import AddRestaurant from "./pages/admin/AddRestaurant";
  import UpdateRestaurant from "./pages/admin/UpdateResturant";
- import CustomerDashboard from "/pages/customer/CustomerDashboard";
+ import CustomerDashboard from "./pages/customer/CustomerDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 
