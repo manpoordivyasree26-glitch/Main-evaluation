@@ -1,19 +1,27 @@
-import { useEffect,useState } from "react";
-import RestaurantCard from "../../components/RestaurantCard";
-function CustomerDashboard(){
-const[restaurants,setRestaurants]=useState([]);
+import { useEffect, useState } from "react";
+import ResturantCard from "../../components/ResturantCard";
 
-useEffect(()=>{
-    const data=JSON.parse(localStorage.getItem("restaurants"))||[];
+function CustomerDashboard() {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("restaurants")) || [];
     setRestaurants(data);
-},[]);
-return(
+  }, []);
+
+  return (
     <div>
-        <h2>Customer Dashboard</h2>
-        {restaurants.map((res)=>{
-            <RestaurantCard key={res.restaurantID} data={res}></RestaurantCard>
-        })}
+      <h2>Customer Dashboard</h2>
+
+      {restaurants.length === 0 ? (
+        <p>No restaurants available</p>
+      ) : (
+        restaurants.map((res) => (
+          <ResturantCard key={res.restaurantID} data={res} />
+        ))
+      )}
     </div>
-);
+  );
 }
+
 export default CustomerDashboard;
