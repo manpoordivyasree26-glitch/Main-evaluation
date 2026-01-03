@@ -1,10 +1,8 @@
  import {Route,Routes} from "react-router-dom";
  import Login from "./pages/Login"
  import AdminDashboard from "./pages/admin/AdminDashboard";
- import AddRestaurant from "./pages/admin/AddRestaurant";
- import UpdateRestaurant from "./pages/admin/UpdateResturant";
  import CustomerDashboard from "./pages/customer/CustomerDashboard";
-import ProtectedRoute from "./components/ProtectedRoute";
+ import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App(){
