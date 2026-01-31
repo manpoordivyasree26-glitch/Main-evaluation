@@ -6,6 +6,7 @@ export const signup=async(req,res)=>{
         return res.status(400).json({message:"Invalid role"});
     }
 
+
         const {error}=await supabase
         .from("users")
         .insert([{
